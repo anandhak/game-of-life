@@ -30,3 +30,20 @@ The universe variable represents the initial state of the cells in the universe.
 The aliveConditionArray variable is an array of integers that represents the number of live neighbors required for a live cell to remain alive in the next state. The deadConditionArray variable is an array of integers that represents the number of live neighbors required for a dead cell to come to life in the next state.
 
 The generations variable represents the number of generations (ticks) to run the simulation.
+
+----------
+Code/Design Feedback by @anandhak. 
+
+- Easy to download and execute the code, with the strucutre and README. (Can be improveded to make it also accept input etc)
+- At a higher level functions and class names are clear, code is simple enough to understand, however methods are long and nested and should be improved further.
+- The logic seems to be a bit off from whats expected. Its an infinite grid, do not assume the edge the cells will die. Try using this from the simulation and verify your output https://playgameoflife.com/  . 3rd tick your cell die off the edge, 4th tick is calculated wrong. 5th onwards is fine. But yeah the overall logic needs to be corrected.
+- It would be better if you could demonstrate correctness of your code with some basic Unit testing. (or even automated end to end testing, even if for only a couple of scenarios).
+
+- Improve code design , as a quick way to give you an idea of better code (not necessarily design) you can refer to the links below
+https://developerhandbook.stakater.com/content/architecture/object-calisthenics.html
+https://williamdurand.fr/2013/06/03/object-calisthenics/
+https://bgasparotto.com/object-calisthenics
+
+Try to refactor the code above to follow the object calisthenics challenge outlines above. This is only a suggestion. You can improve the code design however you see fit. 
+- 
+
