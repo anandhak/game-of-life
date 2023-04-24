@@ -1,4 +1,4 @@
-import {Grid} from './grid.js'
+import Grid from './grid.js'
 import {it, describe, expect, beforeEach, afterEach} from 'vitest'
 
 describe('Grid Class', () => {
@@ -12,16 +12,10 @@ describe('Grid Class', () => {
       [dead,dead,dead]
     ];
 
-    beforeEach('', () => {
-      grid = new Grid(myUniverse, alive, dead);
-    });
-
-    afterEach('', () => {
-      grid = null;
-    })
-
     it('should return the neighbour of alive neighbours', () => {
-      let count = grid.countNeighbour(1,1);
+      grid = new Grid(myUniverse, alive, dead);
+      const {startRow, startCol} = grid.calculateInsertIndex(myUniverse.length,myUniverse[0].length);
+      const count = grid.countNeighbour(startRow+1, startCol+1);
       expect(count).toBe(5);
 
     });
